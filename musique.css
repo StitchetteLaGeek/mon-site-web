@@ -1,0 +1,181 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    height: 100vh; /* Garantit que le body prend toute la hauteur de la fenêtre */
+    margin: 0;
+}
+
+/* Fond avec opacité */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bachata.jpg') center/cover no-repeat; /* Image de fond */
+    background-attachment: fixed;
+    opacity: 0.3; /* Ajuste l'opacité ici */
+    z-index: -1; /* Place l'image derrière le contenu */
+}
+
+/* Menu en haut */
+.top-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 64, 129, 0.8); /* Rose doré avec transparence */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.menu-item i {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.menu-item:hover {
+    opacity: 0.7;
+}
+
+/* Contenu principal CENTRÉ */
+.content-musique {
+    height: 100vh; /* Occupe toute la hauteur de l'écran */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte à l'intérieur */
+}
+
+/* Contenu spécifique */
+.content {
+    max-width: 600px; /* Largeur maximale du contenu */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7); /* Fond blanc avec transparence */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+/* Texte noir */
+.content h1,
+.content p,
+.music-list a {
+    color: black;
+}
+
+/* Titre principal */
+.content-musique h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black; /* Texte du titre en noir */
+}
+
+/* Texte descriptif */
+.content-musique p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Lien Spotify */
+.spotify-link {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #1db954; /* Couleur Spotify */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.spotify-link:hover {
+    background-color: #1ed760;
+}
+
+.spotify-icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* Liste des musiques */
+.music-list ul {
+    list-style-type: none; /* Enlève les puces */
+    padding: 0;
+    margin-top: 20px;
+}
+
+.music-list li {
+    margin-bottom: 10px;
+}
+
+.music-list a {
+    color: black; /* Texte des liens en noir */
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.music-list a:hover {
+    color: #ff4081; /* Rose doré au survol */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 1rem;
+}
+
+/* Adaptation mobile */
+@media screen and (max-width: 768px) {
+    .top-menu {
+        height: 50px;
+        justify-content: space-evenly;
+    }
+
+    .menu-item i {
+        font-size: 1.5rem;
+    }
+
+    .content-musique h1 {
+        font-size: 2rem;
+    }
+
+    .spotify-link {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .music-list a {
+        font-size: 1.1rem;
+    }
+}
